@@ -1,0 +1,10 @@
+.login-field {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.login-field label span{
+  text-align: left;
+  margin-right: 15px;
+}
