@@ -4,9 +4,10 @@ import React from 'react'
 import { Login } from './components/Login'
 import FetchDemo from './components/FetchDemo/FetchDemo'
 import LocalStorageDemo from './components/LocalStorageDemo/LocalStorage'
+import HoverDemo from './components/HoverDemo/HoverDemo'
 
 type TASK_TYPE = 'LOGIN' | 'FETCH' | 'LOCAL_STORAGE' | 'HOVER' | 'VIEWPORT_SIZE' | 'WINDOW_SCROLL' | 'TOGGLE_PLUS'
-const CURRENT_TASK: TASK_TYPE = 'LOCAL_STORAGE'
+const CURRENT_TASK: TASK_TYPE = 'HOVER'
 
 class ErrorBoundary extends React.Component<{ children: React.ReactNode }> {
   state = { hasError: false, error: '' }
@@ -59,6 +60,8 @@ function TaskSelector({ currentTask }: { currentTask: TASK_TYPE  }) {
       return <FetchDemo />
     case 'LOCAL_STORAGE':
       return <LocalStorageDemo />
+    case 'HOVER':
+      return <HoverDemo />
     default:
       return null
   }
