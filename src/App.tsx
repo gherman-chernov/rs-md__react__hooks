@@ -5,9 +5,10 @@ import { Login } from './components/Login'
 import FetchDemo from './components/FetchDemo/FetchDemo'
 import LocalStorageDemo from './components/LocalStorageDemo/LocalStorage'
 import HoverDemo from './components/HoverDemo/HoverDemo'
+import ViewportSizeDemo from './components/ViewportSizeDemo/ViewportSizeDemo'
 
 type TASK_TYPE = 'LOGIN' | 'FETCH' | 'LOCAL_STORAGE' | 'HOVER' | 'VIEWPORT_SIZE' | 'WINDOW_SCROLL' | 'TOGGLE_PLUS'
-const CURRENT_TASK: TASK_TYPE = 'HOVER'
+const CURRENT_TASK: TASK_TYPE = 'VIEWPORT_SIZE'
 
 class ErrorBoundary extends React.Component<{ children: React.ReactNode }> {
   state = { hasError: false, error: '' }
@@ -62,6 +63,8 @@ function TaskSelector({ currentTask }: { currentTask: TASK_TYPE  }) {
       return <LocalStorageDemo />
     case 'HOVER':
       return <HoverDemo />
+    case 'VIEWPORT_SIZE':
+      return <ViewportSizeDemo />
     default:
       return null
   }
