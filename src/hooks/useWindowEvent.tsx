@@ -10,5 +10,5 @@ export default function useWindowEvent(
     return () => {
       window.removeEventListener(type, handler, options);
     };
-  }, [type, handler]);
+  }, [type, handler, options]);
 }

@@ -4,12 +4,11 @@ export default function useHover<T extends HTMLElement>() {
   const ref = useRef<T>(null);
   const [hovered, setIsHovering] = useState(false);
 
-  const handleMouseEnter = () => setIsHovering(true);
-  const handleMouseLeave = () => setIsHovering(false);
-
   useEffect(() => {
     const current = ref.current;
-    
+    const handleMouseEnter = () => setIsHovering(true);
+    const handleMouseLeave = () => setIsHovering(false);
+
     if (!current) return;
 
     current.addEventListener("mouseenter", handleMouseEnter);
@@ -25,6 +24,6 @@ export default function useHover<T extends HTMLElement>() {
 
   return {
     hovered,
-    ref
+    ref,
   };
 }
