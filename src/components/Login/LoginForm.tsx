@@ -1,7 +1,7 @@
 import { startTransition, useRef } from "react";
 import "./login-form.css";
 import { Field } from "./Field";
-import { SubmitButton } from "../SubmitButton";
+import { SubmitButton } from "./SubmitButton";
 
 export function LoginForm({
   setUser,
